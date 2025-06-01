@@ -19,7 +19,7 @@ def common_header(page_instance: Page):
             page_instance.a("Static Assets", href="/static-demo")
 
     def common_footer(page_instance: Page):
-        page_instance.footer(f"© {datetime.datetime.now().year} Syqlorix Demo Site")
+        page_instance.footer(f"Â© {datetime.datetime.now().year} Syqlorix Demo Site")
 
     base_styles_dict = {
         "body": {
@@ -133,18 +133,19 @@ def common_header(page_instance: Page):
 ```
 
 ## How to Run:
+
 To run this example and start the multi-page development server:
 
-```
-bash syqlorix serve examples/multi_page_site.py
+```bash
+syqlorix serve examples/multi_page_site.py
 ```
 
- Once the server is running, open your web browser and navigate to the following URLs:
+Once the server is running, open your web browser and navigate to the following URLs:
+    - Main Page: `http://localhost:8000/`
+    - About Page: `http://localhost:8000/about`
+    - Dynamic Page: `http://localhost:8000/dynamic` (Content updates on refresh)
+    - Static Assets Demo: `http://localhost:8000/static-demo` (Verify external CSS/JS)
 
-- Main Page: `http://localhost:8000/`
-- About Page: `http://localhost:8000/about`
-- Dynamic Page: `http://localhost:8000/dynamic` (Content updates on refresh)
-- Static Assets Demo: `http://localhost:8000/static-demo` (Verify external CSS/JS)
-  
 If you are working in GitHub Codespaces, look for the "Ports" tab for convenient clickable links.
-    To stop the server, return to the terminal where it's running and press `Enter`
+
+To stop the server, return to the terminal where it's running and press `Enter`.
