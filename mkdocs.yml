@@ -54,13 +54,13 @@ nav:
 
 markdown_extensions:
   - admonition
-  - pymdownx.highlight: 
+  - pymdownx.highlight:
       anchor_linenums: true
       line_numbers: true
-  - pymdownx.superfences 
-  - pymdownx.details 
-  - pymdownx.snippets 
-  - pymdownx.tabbed: 
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.tabbed:
       alternate_style: true
-  - attr_list 
-  - md_in_html 
+  - attr_list
+  - md_in_html
