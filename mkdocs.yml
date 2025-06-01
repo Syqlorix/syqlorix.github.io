@@ -1,0 +1,67 @@
+site_name: Syqlorix Documentation
+site_url: https://syqlorix.github.io/
+repo_url: https://github.com/Syqlorix/Syqlorix
+repo_name: Syqlorix Library
+edit_uri: edit/main/docs
+
+theme:
+  name: material
+  custom_dir: theme
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: teal
+      accent: deep orange
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: deep orange
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - navigation.instant
+    - navigation.sections
+    - navigation.top 
+    - search.highlight
+    - search.share
+    - search.suggest
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference:
+      - Overview: api-reference/index.md
+      - Page Class: api-reference/page-class.md
+      - CLI Usage: api-reference/cli-usage.md
+      - CSS DSL: api-reference/css-dsl.md
+  - Examples:
+      - Overview: examples/index.md
+      - Single Page Generation: examples/basic-generation.md
+      - Multi-Page Dev Server: examples/multi-page-dev-server.md
+      - Static Site Generation: examples/static-site-generation.md
+      - Flask Integration: examples/flask-integration.md
+  - Future Directions: future-directions.md
+  - Contributing: contributing.md
+  - License: license.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight: 
+      anchor_linenums: true
+      line_numbers: true
+  - pymdownx.superfences 
+  - pymdownx.details 
+  - pymdownx.snippets 
+  - pymdownx.tabbed: 
+      alternate_style: true
+  - attr_list 
+  - md_in_html 
