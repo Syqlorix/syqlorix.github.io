@@ -139,10 +139,12 @@ To run this example and start the multi-page development server:
 
     Once the server is running, open your web browser and navigate to the following URLs:
 
-    - Main Page: `http://localhost:8000/`
+    ```- Main Page: `http://localhost:8000/`
     - About Page: `http://localhost:8000/about`
     - Dynamic Page: `http://localhost:8000/dynamic` (Content updates on refresh)
-    - Static Assets Demo: `http://localhost:8000/static-demo` (Verify external CSS/JS)
+    - Static Assets Demo: `http://localhost:8000/static-demo` (Verify external CSS/JS)```
     
-    If you are working in GitHub Codespaces, look for the "Ports" tab for convenient clickable links.
+```
+If you are working in GitHub Codespaces, look for the "Ports" tab for convenient clickable links.
     To stop the server, return to the terminal where it's running and press `Enter`
+```
