@@ -1,113 +1,113 @@
 # Page Class Reference
 
-        The `syqlorix.Page` class is the core component for building HTML documents.
+The `syqlorix.Page` class is the core component for building HTML documents.
 
-        ## `Page(title="")`
+## `Page(title="")`
 
-        Initializes a new HTML page.
+Initializes a new HTML page.
 
-        - `title` (str, optional): The title of the HTML document, which will be set in the `<title>` tag.
+- `title` (str, optional): The title of the HTML document, which will be set in the `<title>` tag.
 
-        ## HTML Tag Methods (`page.div()`, `page.h1()`, etc.)
+## HTML Tag Methods (`page.div()`, `page.h1()`, etc.)
 
-        The `Page` object dynamically provides methods for common HTML tags.
+The `Page` object dynamically provides methods for common HTML tags.
 
-        ### Usage:
+### Usage:
 
-        1.  **As a container (with `with` statement):** For tags that enclose content (like `div`, `p`, `ul`, `body`).
-            ```python
-            with page.div(id="my-container", _class="wrapper"):
-                page.p("Some content inside the div.")
-            ```
-            Attributes are passed as keyword arguments. `class` is a Python keyword, so use `_class`.
+1.  **As a container (with `with` statement):** For tags that enclose content (like `div`, `p`, `ul`, `body`).
+    ```python
+    with page.div(id="my-container", _class="wrapper"):
+        page.p("Some content inside the div.")
+    ```
+    Attributes are passed as keyword arguments. `class` is a Python keyword, so use `_class`.
 
-        2.  **As a single-line tag (content as arguments):** For tags that might contain inline text or other elements.
-            ```python
-            page.h1("Page Title")
-            page.li("List Item 1")
-            page.a("Link Text", href="https://example.com")
-            ```
+2.  **As a single-line tag (content as arguments):** For tags that might contain inline text or other elements.
+    ```python
+    page.h1("Page Title")
+    page.li("List Item 1")
+    page.a("Link Text", href="https://example.com")
+    ```
 
-        ### Common Attributes:
+### Common Attributes:
 
-        Standard HTML attributes can be passed as keyword arguments. Note that `class` should be passed as `_class`.
+Standard HTML attributes can be passed as keyword arguments. Note that `class` should be passed as `_class`.
 
-        ```python
-        page.div(id="unique-id", _class="my-class another-class", style="color: red;")
-        ```
+```python
+page.div(id="unique-id", _class="my-class another-class", style="color: red;")
+```
 
-        ## Styling and Scripting
+## Styling and Scripting
 
-        ### `page.style(css_str)`
+### `page.style(css_str)`
 
-        Adds raw CSS content directly into an inline `<style>` tag within the HTML `<head>`.
+Adds raw CSS content directly into an inline `<style>` tag within the HTML `<head>`.
 
-        ```python
-        page.style("""
-            body { font-family: sans-serif; }
-            h1 { color: blue; }
-        """)
-        ```
+```python
+page.style("""
+    body { font-family: sans-serif; }
+    h1 { color: blue; }
+""")
+```
 
-        ### `page.script(js_str)`
+### `page.script(js_str)`
 
-        Adds raw JavaScript content directly into an inline `<script>` tag, placed just before the closing `</body>` tag for performance.
+Adds raw JavaScript content directly into an inline `<script>` tag, placed just before the closing `</body>` tag for performance.
 
-        ```python
-        page.script("""
-            document.getElementById('myBtn').onclick = function() {
-                alert('Button clicked!');
-            };
-        """)
-        ```
+```python
+page.script("""
+    document.getElementById('myBtn').onclick = function() {
+        alert('Button clicked!');
+    };
+""")
+```
 
-        ### `page.link_css(href, **attrs)`
+### `page.link_css(href, **attrs)`
 
-        Adds a `<link rel="stylesheet" href="..." />` tag to the HTML `<head>`, linking an external CSS file.
+Adds a `<link rel="stylesheet" href="..." />` tag to the HTML `<head>`, linking an external CSS file.
 
-        - `href` (str): The URL of the CSS file.
-        - `**attrs`: Any additional HTML attributes for the `<link>` tag (e.g., `integrity`, `crossorigin`).
+- `href` (str): The URL of the CSS file.
+- `**attrs`: Any additional HTML attributes for the `<link>` tag (e.g., `integrity`, `crossorigin`).
 
-        ```python
-        page.link_css(href="/static/css/styles.css")
-        page.link_css(href="https://unpkg.com/some-lib.css", integrity="sha384-...")
-        ```
+```python
+page.link_css(href="/static/css/styles.css")
+page.link_css(href="https://unpkg.com/some-lib.css", integrity="sha384-...")
+```
 
-        ### `page.link_js(src, **attrs)`
+### `page.link_js(src, **attrs)`
 
-        Adds a `<script src="..."></script>` tag to the end of the HTML `<body>`, linking an external JavaScript file.
+Adds a `<script src="..."></script>` tag to the end of the HTML `<body>`, linking an external JavaScript file.
 
-        - `src` (str): The URL of the JavaScript file.
-        - `**attrs`: Any additional HTML attributes for the `<script>` tag (e.g., `defer`, `async`, `integrity`).
+- `src` (str): The URL of the JavaScript file.
+- `**attrs`: Any additional HTML attributes for the `<script>` tag (e.g., `defer`, `async`, `integrity`).
 
-        ```python
-        page.link_js(src="/static/js/app.js", defer=True)
-        ```
+```python
+page.link_js(src="/static/js/app.js", defer=True)
+```
 
-        ## Head Elements
+## Head Elements
 
-        The following tags can be called directly on the `Page` object and will be automatically added to the HTML `<head>`:
+The following tags can be called directly on the `Page` object and will be automatically added to the HTML `<head>`:
 
-        - `page.meta(...)`
-        - `page.link(...)` (can also be used for other `rel` types like `icon`, `preload`)
-        - `page.base(...)`
-        - `page.title(...)` (usually set via `Page(title="...")` constructor)
+- `page.meta(...)`
+- `page.link(...)` (can also be used for other `rel` types like `icon`, `preload`)
+- `page.base(...)`
+- `page.title(...)` (usually set via `Page(title="...")` constructor)
 
-        ```python
-        page.meta(charset="utf-8")
-        page.meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        page.link(rel="icon", type="image/png", href="/favicon.png")
-        ```
+```python
+page.meta(charset="utf-8")
+page.meta(name="viewport", content="width=device-width, initial-scale=1.0")
+page.link(rel="icon", type="image/png", href="/favicon.png")
+```
 
-        ## Rendering
+## Rendering
 
-        ### `page.render()`
+### `page.render()`
 
-        Renders the entire `Page` object into a complete HTML string, including `<!DOCTYPE html>`, `<head>`, and `<body>`.
+Renders the entire `Page` object into a complete HTML string, including `<!DOCTYPE html>`, `<head>`, and `<body>`.
 
-        - **Returns**: `str` - The full HTML document.
+- **Returns**: `str` - The full HTML document.
 
-        ```python
-        html_output = page.render()
-        # print(html_output)
-        ```
+```python
+html_output = page.render()
+# print(html_output)
+```
