@@ -3,10 +3,11 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - main # Trigger on push to main branch
+      - main 
 
 jobs:
-  deploy:
+  build:
+    name: Build docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,5 +22,25 @@ jobs:
       - name: Install dependencies
         run: pip install mkdocs mkdocs-material
 
-      - name: Build and deploy
-        run: mkdocs gh-deploy --force --remote-name origin 
+      - name: Build MkDocs site
+        run: mkdocs build 
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './site' 
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build 
+    permissions:
+      pages: write      
+      id-token: write   
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3 
