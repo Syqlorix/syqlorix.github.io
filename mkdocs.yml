@@ -2,7 +2,7 @@ site_name: Syqlorix Documentation
 site_url: https://syqlorix.github.io/
 repo_url: https://github.com/Syqlorix/Syqlorix
 repo_name: Syqlorix Library
-edit_uri: edit/main/docs 
+edit_uri: edit/main/docs
 
 theme:
   name: material
@@ -26,7 +26,7 @@ theme:
     - content.tooltips
     - navigation.instant
     - navigation.sections
-    - navigation.top 
+    - navigation.top
     - search.highlight
     - search.share
     - search.suggest
@@ -54,9 +54,11 @@ nav:
 
 markdown_extensions:
   - admonition
-  - pymdownx.highlight:
+
+  - codehilite:
+      css_class: highlight
+      linenums: true
       anchor_linenums: true
-      line_numbers: true
   - pymdownx.superfences
   - pymdownx.details
   - pymdownx.snippets
