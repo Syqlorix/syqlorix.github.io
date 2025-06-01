@@ -130,9 +130,8 @@ def common_header(page_instance: Page):
         project_root_for_example = os.path.dirname(current_script_dir) 
 
         serve_pages_dev(routes, port=8000, project_root=project_root_for_example)
-    ```
 
-    ## How to Run:
+    ### How to Run:
 
     To run this example and start the multi-page development server:
 
