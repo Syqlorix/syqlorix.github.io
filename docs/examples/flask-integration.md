@@ -47,7 +47,8 @@ if __name__ == '__main__':
     ## How to Run:
 
     1.  **Install Flask** (if you haven't already):
-        ```pip install Flask```
+```pip install Flask
+```
     2.  **Run the Flask application:**
 ```bash
 python examples/flask_integration.py
