@@ -132,15 +132,14 @@ def common_header(page_instance: Page):
         serve_pages_dev(routes, port=8000, project_root=project_root_for_example)
 ```
 
-    ## How to Run:
+## How to Run:
 
-    To run this example and start the multi-page development server:
+To run this example and start the multi-page development server:
 
-```bash
-syqlorix serve examples/multi_page_site.py
+```bash syqlorix serve examples/multi_page_site.py
 ```
 
-    Once the server is running, open your web browser and navigate to the following URLs:
+Once the server is running, open your web browser and navigate to the following URLs:
     - Main Page: ```
     http://localhost:8000/
     ```
