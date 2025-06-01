@@ -139,11 +139,10 @@ To run this example and start the multi-page development server:
 
     Once the server is running, open your web browser and navigate to the following URLs:
 
-```
-    - Main Page: `http://localhost:8000/`
-    - About Page: `http://localhost:8000/about`
-    - Dynamic Page: `http://localhost:8000/dynamic` (Content updates on refresh)
-    - Static Assets Demo: `http://localhost:8000/static-demo` (Verify external CSS/JS)
+- Main Page: `http://localhost:8000/`
+- About Page: `http://localhost:8000/about`
+- Dynamic Page: `http://localhost:8000/dynamic` (Content updates on refresh)
+- Static Assets Demo: `http://localhost:8000/static-demo` (Verify external CSS/JS)
 ```
     
 ```
