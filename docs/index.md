@@ -1,4 +1,3 @@
-````markdown
 # Welcome to Syqlorix Documentation!
 
         This is the official documentation and comprehensive example guide for the **Syqlorix** Python package.
@@ -55,5 +54,3 @@
         ## Running Examples
 
         All detailed examples are available in the [Examples section](examples/index.md).
-
-````
