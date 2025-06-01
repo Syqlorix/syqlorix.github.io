@@ -54,14 +54,13 @@ nav:
 
 markdown_extensions:
   - admonition
-
-  - codehilite:
-      css_class: highlight
+  - codehilite: 
       linenums: true
-      anchor_linenums: true
-  - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.snippets
-  - pymdownx.tabbed:
+      guess_lang: false 
+  - pymdownx.superfences 
+  - pymdownx.details 
+  - pymdownx.snippets 
+  - pymdownx.tabbed: 
       alternate_style: true
-  - attr_list
+  - attr_list 
+  # - md_in_html 
