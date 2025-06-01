@@ -47,12 +47,12 @@ if __name__ == '__main__':
 ## How to Run:
 
 1.  **Install Flask** (if you haven't already):
-        ```bash
-        pip install Flask
-        ```
+   ```bash
+pip install Flask
+   ```
 2.  **Run the Flask application:**
-        ```bash
-        python examples/flask_integration.py
-        ```
+   ```bash
+   python examples/flask_integration.py
+   ```
 3.  Once the server is running, open your web browser and navigate to `http://127.0.0.1:5000/`.
 4.  To stop the Flask server, return to your terminal and press `Ctrl + C`.
