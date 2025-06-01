@@ -1,4 +1,4 @@
-# Multi-Page Development Server
+# Multi-Page Development Server.
 
 This example demonstrates how to set up and run a local development server using `syqlorix serve` CLI command. It showcases defining multiple routes, dynamic page generation, and serving static assets.
 
