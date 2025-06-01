@@ -2,11 +2,10 @@ site_name: Syqlorix Documentation
 site_url: https://syqlorix.github.io/
 repo_url: https://github.com/Syqlorix/Syqlorix
 repo_name: Syqlorix Library
-edit_uri: edit/main/docs
+edit_uri: edit/main/docs 
 
 theme:
   name: material
-  custom_dir: theme
   palette:
     - scheme: default
       toggle:
