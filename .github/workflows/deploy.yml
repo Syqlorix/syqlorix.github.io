@@ -1,0 +1,26 @@
+# .github/workflows/deploy.yml
+name: Deploy Docs
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build and deploy
+        run: mkdocs gh-deploy --force
