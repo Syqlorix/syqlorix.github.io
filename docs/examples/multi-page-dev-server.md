@@ -136,9 +136,9 @@ def common_header(page_instance: Page):
 
     To run this example and start the multi-page development server:
 
-    ```bash
-    syqlorix serve examples/multi_page_site.py
-    ```
+```bash
+syqlorix serve examples/multi_page_site.py
+```
 
     Once the server is running, open your web browser and navigate to the following URLs:
     - Main Page: `http://localhost:8000/`
