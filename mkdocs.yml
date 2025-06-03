@@ -4,6 +4,9 @@ repo_url: https://github.com/Syqlorix/Syqlorix
 repo_name: Syqlorix Library
 edit_uri: edit/main/docs
 
+extra:
+  version: 0.0.3.2 
+
 theme:
   name: material
   palette:
@@ -26,7 +29,7 @@ theme:
     - content.tooltips
     - navigation.instant
     - navigation.sections
-    - navigation.top
+    - navigation.top 
     - search.highlight
     - search.share
     - search.suggest
@@ -40,8 +43,15 @@ nav:
   - API Reference:
       - Overview: api-reference/index.md
       - Page Class: api-reference/page-class.md
+      - Form Helpers: api-reference/form-helpers.md # NEW
+      - Media Elements: api-reference/media-elements.md # NEW
+      - Components: api-reference/components.md # NEW
+      - Component Loading: api-reference/component-loading.md # NEW
+      - Routing System: api-reference/routing-system.md # NEW
+      - Server-Side Form Parsing: api-reference/server-form-parsing.md # NEW
       - CLI Usage: api-reference/cli-usage.md
       - CSS DSL: api-reference/css-dsl.md
+      - Pre-defined Components: api-reference/predefined-components.md # NEW
   - Examples:
       - Overview: examples/index.md
       - Single Page Generation: examples/basic-generation.md
@@ -54,13 +64,12 @@ nav:
 
 markdown_extensions:
   - admonition
-  - codehilite: 
+  - codehilite:
       linenums: true
-      guess_lang: false 
-  - pymdownx.superfences 
-  - pymdownx.details 
-  - pymdownx.snippets 
-  - pymdownx.tabbed: 
+      guess_lang: false
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.tabbed:
       alternate_style: true
-  - attr_list 
-  # - md_in_html 
+  - attr_list
