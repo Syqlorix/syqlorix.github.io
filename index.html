@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syqlorix Documentation - Python Framework for Web</title>
+    <meta name="description" content="A hyper-minimalist Python framework for building component-based web UIs and static sites with a pure Python DSL.">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/Syqlorix/Syqlorix/main/syqlorix-logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-dark.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <header class="header fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6">
+        <div class="flex items-center">
+            <button class="text-xl p-2 -ml-2" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="flex items-center space-x-3">
+            <div class="relative hidden md:block">
+                <input type="text" id="searchInput" placeholder="Search documentation..." class="search-input pl-10 pr-4 py-2 rounded-md text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+
+                <div id="searchResults" class="search-results-container hidden">
+                </div>
+            </div>
+
+            <button class="theme-toggle p-2 rounded-md ml-2" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            
+            <a href="https://github.com/Syqlorix/Syqlorix" target="_blank" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100" aria-label="View on GitHub">
+                <i class="fab fa-github text-xl"></i>
+            </a>
+        </div>
+    </header>
+    <aside class="sidebar fixed top-0 left-0 h-full overflow-y-auto z-40" id="sidebar">
+    <div class="p-6">
+        <!-- Logo/Title -->
+        <div class="flex items-center space-x-3 mb-8">
+            <img src="https://raw.githubusercontent.com/Syqlorix/Syqlorix/main/syqlorix-logo.svg" alt="Syqlorix Logo" class="w-10 h-10">
+            <div>
+                <h1 class="font-bold text-xl" style="color: var(--primary)">Syqlorix</h1>
+                <p class="text-sm" style="color: var(--text-muted)">Documentation</p>
+            </div>
+        </div>
+        
+        <!-- Mobile Search -->
+        <div class="relative mb-6 md:hidden">
+            <input type="text" placeholder="Search..." class="search-input pl-10 pr-4 py-2 rounded-md text-sm w-full focus:outline-none">
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+
+        <!-- Corrected Navigation -->
+        <nav class="space-y-1">
+            <h4 class="font-semibold text-sm uppercase tracking-wide mb-3" style="color: var(--text-muted)">Getting Started</h4>
+            <a href="#" class="nav-link active" data-page="introduction">
+                <i class="fas fa-play-circle w-4 mr-3"></i>Introduction
+            </a>
+            <a href="#" class="nav-link" data-page="getting-started">
+                <i class="fas fa-rocket w-4 mr-3"></i>Getting Started
+            </a>
+
+            <h4 class="font-semibold text-sm uppercase tracking-wide mb-3 mt-8" style="color: var(--text-muted)">Core Concepts</h4>
+            <a href="#" class="nav-link" data-page="core-concepts">
+                <i class="fas fa-lightbulb w-4 mr-3"></i>Core Concepts
+            </a>
+            <a href="#" class="nav-link" data-page="component-reference">
+                <i class="fas fa-book w-4 mr-3"></i>Component Reference
+            </a>
+            <a href="#" class="nav-link" data-page="routing">
+                <i class="fas fa-route w-4 mr-3"></i>Routing
+            </a>
+            <a href="#" class="nav-link" data-page="handling-forms">
+                <i class="fas fa-edit w-4 mr-3"></i>Handling Forms
+            </a>
+            <a href="#" class="nav-link" data-page="static-files">
+                <i class="fas fa-file-alt w-4 mr-3"></i>Static Files
+            </a>
+
+            <h4 class="font-semibold text-sm uppercase tracking-wide mb-3 mt-8" style="color: var(--text-muted)">Advanced</h4>
+            <a href="#" class="nav-link" data-page="deployment">
+                <i class="fas fa-cloud-upload-alt w-4 mr-3"></i>Deployment
+            </a>
+            <a href="#" class="nav-link" data-page="cli-reference">
+                <i class="fas fa-terminal w-4 mr-3"></i>CLI Reference
+            </a>
+            <a href="#" class="nav-link" data-page="api-reference">
+                <i class="fas fa-code w-4 mr-3"></i>API Reference
+            </a>
+
+            <div class="mt-8 pt-6 border-t" style="border-color: var(--border)">
+                <a href="https://github.com/Syqlorix/Syqlorix" target="_blank" class="nav-link">
+                    <i class="fab fa-github w-4 mr-3"></i>GitHub Repository
+                </a>
+                <a href="https://pypi.org/project/syqlorix/" target="_blank" class="nav-link">
+                    <i class="fab fa-python w-4 mr-3"></i>PyPI Package
+                </a>
+            </div>
+        </nav>
+    </div>
+</aside>
+    <main class="main-content">
+        <div class="max-w-4xl mx-auto px-8 py-12">
+            <div id="content-container" class="prose max-w-none"></div>
+
+            <div id="page-navigation" class="flex justify-between mt-12 pt-8 border-t" style="border-color: var(--border);">
+                <button id="prevArrow" class="page-nav-button text-left">
+                </button>
+                <button id="nextArrow" class="page-nav-button text-right">
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+</html>
