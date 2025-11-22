@@ -42,3 +42,16 @@ def message_form(request):
 ### The `request` Object
 
 Upon form submission, the `request.form_data` attribute is populated with the submitted data. The dictionary keys correspond to the `name` attribute of the form's input fields.
+
+## API Data (JSON)
+
+For API endpoints that receive JSON data, the `request.json_data` attribute can be used.
+
+```python
+@doc.route('/api/data', methods=['POST'])
+def api_data(request):
+    # Data sent with a Content-Type of application/json
+    # will be available in the request.json_data dictionary.
+    item = request.json_data.get('item')
+    return {"status": "success", "received": item}
+```

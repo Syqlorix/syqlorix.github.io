@@ -18,10 +18,18 @@ This document provides a technical overview of the framework.
 
 ## Features
 
-- **Component-Based UI:** Construct user interfaces by defining reusable components as Python classes.
+- **Component-Based UI:** Construct user interfaces by defining reusable, stateful components as Python classes.
+
+- **State Management:** Simple server-side state management for creating interactive components.
+
+- **Expressive HTML DSL:** Write HTML in a Pythonic way with a chainable syntax for classes and a powerful CSS selector-like syntax for creating elements.
+
+- **Tailwind CSS Integration:** Seamlessly integrate Tailwind CSS into your project with automatic CSS generation.
+
+- **Routing System:** A flexible routing system with support for dynamic routes and blueprints for organizing large applications.
 
 - **Live-Reload Server:** The development server automatically reloads the browser when project files are modified.
 
-- **Static File Handling:** The server provides built-in support for serving static assets. Access can be managed via an optional `.syqlorix` file.
+- **Static File Handling:** The server provides built-in support for serving static assets.
 
-- **Built-in Tooling:** The framework includes a routing system, form handling capabilities, a command-line interface, and a static site builder.
+- **Built-in Tooling:** The framework includes form handling capabilities, a command-line interface with a static site builder, and more.

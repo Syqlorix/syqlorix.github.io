@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Complete Component Reference
+title: HTML Reference
 parent: Documentation
 nav_order: 4
 ---
 
-# Complete Component Reference
+# HTML Reference
 
-This page serves as a quick-reference between the Syqlorix Python components to the final HTML output.
+This page serves as a quick-reference between the Syqlorix Python functions and the final HTML output. For more information on how to create your own components, see the [Core Concepts](./core-concepts.md) page.
 
-| Syqlorix Component | HTML Tag | Description & Short Example |
+| Syqlorix Function | HTML Tag | Description & Short Example |
 | :--- | :--- | :--- |
 | `a()` | `<a>` | **Anchor / Link:** `a("Home", href="/")` |
 | `abbr()` | `<abbr>` | **Abbreviation:** `abbr("WHO", title="World Health Organization")` |

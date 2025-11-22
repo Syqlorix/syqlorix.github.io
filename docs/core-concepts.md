@@ -57,3 +57,67 @@ def home():
         title="My First Card" # Passed as a prop
     )
 ```
+
+### State Management
+
+Components can have internal state using the `self.state` dictionary and the `self.set_state()` method. State is managed on the server, and updates are triggered by new page requests.
+
+```python
+class Counter(Component):
+    def __init__(self, *children, **props):
+        super().__init__(*children, **props)
+        # Initialize state from props (e.g., from request query params)
+        self.set_state({"count": int(self.props.get("initial_count", 0))})
+
+    def create(self, children=None):
+        count = self.state.get("count", 0)
+        return div(
+            h1(count),
+            form(
+                button("-", name="count", value=count - 1),
+                button("+", name="count", value=count + 1),
+                method="get", action="/"
+            )
+        )
+```
+
+### Component Lifecycle
+
+Components have two lifecycle methods that can be implemented:
+
+*   **`before_render()`**: This method is called before the `create()` method. It's useful for modifying state or props before rendering.
+*   **`after_render(node)`**: This method is called after the `create()` method. It receives the rendered `node` as an argument and can be used to perform actions on the rendered node.
+
+```python
+class MyComponent(Component):
+    def before_render(self):
+        print("Component is about to be rendered")
+
+    def create(self, children=None):
+        return div("Hello from MyComponent")
+
+    def after_render(self, node):
+        print("Component has been rendered")
+```
+
+### Expressive HTML DSL
+
+Syqlorix provides an expressive Domain-Specific Language (DSL) for creating HTML in a Pythonic way.
+
+#### Chaining for CSS classes
+
+You can chain class names to a component to add CSS classes to it.
+
+```python
+# Renders: <div class="my-class another-class">...</div>
+my_div = div.my_class.another_class(p("Hello"))
+```
+
+#### CSS selector-like syntax with `_`
+
+The `_` function provides a powerful shortcut to create elements using a syntax similar to CSS selectors.
+
+```python
+# Renders: <p id="my-id" class="my-class">Hello</p>
+my_paragraph = _('p#my-id.my-class', "Hello")
+```
